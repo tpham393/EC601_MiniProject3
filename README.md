@@ -1,4 +1,5 @@
 # EC601_MiniProject3
+Disclaimer: Algorithm code was modified/updated from previous code I had already written. Code for rendering and testing the OpenAi Gym environment is newly written.
 
 ## Technology Requirements
 To run the code contained in this repo, you will need to install the following:
@@ -27,10 +28,11 @@ Every time it takes an action, it determines whether a random action should be t
 An additional consideration of the algorithm is the hyperparameter alpha, which indicates the learning rate. The learning rate impacts the weight assigned to the "old" (or current) value for a given state (i.e. what the agent has already learned about this state, action pair, if anything) vs the weight assigned to the "new" value for a given state (i.e. what the agent just learned by taking an action in this state).
 
 ## Comparison
-For theta = 1e-5, the Value Iteration algorithm took _____ steps to converge. From a small sample of 5 simulations, the agent's average score was __________, and the average # of penalties the agent incurred was ________.
+For theta = 1e-5, the Value Iteration algorithm took 74 steps to converge. From a small sample of 5 simulations, the agent's average total reward was -0.86, and the average # of penalties the agent incurred was 0.
 For alpha = 0.9 and a constant epsilon = 0.1, data for the Q-learning algorithm was as follows:
-Metric | Episodes = 5 | Episodes = 50 | Episodes = 250
------------- | ------------ | ------------- | -------------
-Avg # steps per episode | 1 | 2 | 3
-Avg score | 1 | 2 | 3
-Avg # penalties | 1 | 2 | 3
+Metric | Episodes = 500 | Episodes = 5000 
+------------ | ------------ | ------------- 
+Avg # steps per episode | 49.56 | 18.23
+Avg score | -1.64 | -1.99 
+Avg # penalties | 0 | 0 
+I also tried running the simulations with # episodes = 5 and 50. In these cases, the policy that the agent learned was terrible. It resulted in an infinite loop, where the taxi would keep choosing to essentially remain stagnant. For example, the taxi would move left and then right over and over again, or the taxi would keep moving up (staying in the same position) at the top of the grid.
