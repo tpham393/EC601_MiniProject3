@@ -30,13 +30,11 @@ An additional consideration of the algorithm is the hyperparameter alpha, which 
 ## Comparison
 For theta = 1e-5, the Value Iteration algorithm took 74 steps to converge. From a small sample of 5 simulations, the agent's average total reward was -0.86, and the average # of penalties the agent incurred was 0.
 For alpha = 0.9 and a constant epsilon = 0.1, data for the Q-learning algorithm was as follows:
+
 | Metric | Episodes = 500 | Episodes = 5000 |
 | ------------ | ------------ | ------------- | 
 | Avg # steps per episode | 49.56 | 18.23 |
 | Avg score | -1.64 | -1.99 |
 | Avg # penalties | 0 | 0 |
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+
 I also tried running the simulations with # episodes = 5 and 50. In these cases, the policy that the agent learned was terrible. It resulted in an infinite loop, where the taxi would keep choosing to essentially remain stagnant. For example, the taxi would move left and then right over and over again, or the taxi would keep moving up (staying in the same position) at the top of the grid.
