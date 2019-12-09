@@ -35,4 +35,8 @@ Metric | Episodes = 500 | Episodes = 5000
 Avg # steps per episode | 49.56 | 18.23
 Avg score | -1.64 | -1.99 
 Avg # penalties | 0 | 0 
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
 I also tried running the simulations with # episodes = 5 and 50. In these cases, the policy that the agent learned was terrible. It resulted in an infinite loop, where the taxi would keep choosing to essentially remain stagnant. For example, the taxi would move left and then right over and over again, or the taxi would keep moving up (staying in the same position) at the top of the grid.
